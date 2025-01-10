@@ -44,9 +44,9 @@ const corsOptions = {
   optionsSuccessStatus: 200,
   methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
   origin: [
-    'http://www.tensysinnovation.com ',
-    'http://api.tensysinnovation.com ',
-    'http://admin.tensysinnovation.com ',
+    'https://www.tensysinnovation.com ',
+    'https://api.tensysinnovation.com ',
+    'https://admin.tensysinnovation.com ',
   ]
 };
 
