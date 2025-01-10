@@ -36,7 +36,21 @@ app.use(cookieParser());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 var publicDir = require("path").join(__dirname, "./uploads");
-app.use(cors());
+
+
+
+const corsOptions = {
+  credentials: true,
+  optionsSuccessStatus: 200,
+  methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+  origin: [
+    'http://www.tensysinnovation.com ',
+    'http://api.tensysinnovation.com ',
+    'http://admin.tensysinnovation.com ',
+  ]
+};
+
+app.use(cors(corsOptions));
 
 app.use("/uploads", express.static(publicDir));
 
