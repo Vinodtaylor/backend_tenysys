@@ -8,18 +8,16 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 
+const dbURI='mongodb+srv://tensysdb:WoVpHaUgZd2nxHVD@tensys.ca1zl.mongodb.net/?retryWrites=true&w=majority&appName=tensys'
 
-const dbURI = 'mongodb://localhost:27017/tensys';
+// const dbURI =   'mongodb://tensysdb:WoVpHaUgZd2nxHVD@tensys/?ssl=true&replicaSet=atlas-d3yeg0-shard-0&authSource=admin&retryWrites=true&w=majority&appName=tensys';
 const port = 3000;
 
 mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(dbURI)
   .then(
     () => {
       console.log("Database connected");
